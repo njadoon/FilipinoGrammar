@@ -3,10 +3,10 @@
           package="com.example.filipinogrammar">
 
     <supports-screens
-        android:largeScreens="true"
-        android:smallScreens="true"
-        android:xlargeScreens="true"
-        android:normalScreens="true" />
+            android:largeScreens="true"
+            android:normalScreens="true"
+            android:smallScreens="true"
+            android:xlargeScreens="true"/>
 
     <application
             android:allowBackup="true"
@@ -15,8 +15,13 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/Theme.FilipinoGrammar">
-        <activity android:name=".MainActivity"
-        android:windowSoftInputMode="adjustResize">
+        <activity android:name=".questions">
+        </activity>
+        <activity
+                android:name=".MainActivity"
+                android:screenOrientation="portrait"
+                android:theme="@style/NoActionBarTheme"
+                android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 

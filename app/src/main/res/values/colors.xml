@@ -19,5 +19,9 @@
     <color name="navy">#000080</color>
     <color name="black">#000000</color>
     <color name="button">#808080</color>
+    <color name="colorPrimary">#7851a9</color>
+    <color name="colorPrimaryDark">#7851a9</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="colorWhite">#FFFFFF</color>
 
 </resources>

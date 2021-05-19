@@ -15,11 +15,11 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/Theme.FilipinoGrammar">
+        <activity android:name=".Choices_Activity">
+        </activity>
         <activity android:name=".Result_Activity">
         </activity>
         <activity android:name=".Leksiyon_Activity">
-        </activity>
-        <activity android:name=".Choice_Activity">
         </activity>
         <activity android:name=".questions">
         </activity>

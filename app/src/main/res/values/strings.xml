@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">FilipinoGrammar</string>
+    <string name="kineme">KINEME</string>
+    <string name="pagod">PAGOD</string>
+    <string name="name">Name</string>
+    <string name="button">Button</string>
 </resources>

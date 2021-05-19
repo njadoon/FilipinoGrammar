@@ -55,7 +55,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/etName"
-                    android:hint="Please enter your name"
+                    android:hint="Pakilagay ang iyong pangalan"
                     android:textColor="#363A43"
                     android:textColorHint="#7A8089"/>
         </com.google.android.material.textfield.TextInputLayout>
@@ -65,7 +65,7 @@
                 android:id="@+id/btnStart"
                 android:layout_marginTop="12dp"
                 android:background="@color/colorPrimary"
-                android:text="Start"
+                android:text="umpisahan"
                 android:textSize="18sp"
                 android:textColor="@color/white"/>
     </LinearLayout>

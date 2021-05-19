@@ -31,11 +31,11 @@ public class Choice_Activity extends AppCompatActivity {
         });
     }
     public void openLeksiyonActivity() {
-        Intent intent = new Intent(this, LeksiyonA1_Activity.class);
+        Intent intent = new Intent(this, Leksiyon_Activity.class);
         startActivity(intent);
     }
     public void openQuizActivity() {
-        Intent intent = new Intent(this, Quiz_Activity.class);
+        Intent intent = new Intent(this, questions.class);
         startActivity(intent);
     }
 }

@@ -4,4 +4,10 @@
     <string name="pagod">PAGOD</string>
     <string name="name">Name</string>
     <string name="button">Button</string>
+    <string name="ang_salitang_nang_ay_isang_pagsabay_at_ang_salin_nito_sa_ingles_ay_when_so_that">Ang salitang \'Nang\'
+        ay isang pagsabay at ang salin nito sa Ingles ay \'when\', \'so that\'.
+    </string>
+    <string name="halimbawa_nagulat_ako_nang_nakita_ko_sila">Halimbawa: Nagulat ako nang nakita ko sila.</string>
+    <string name="kumain_ka_nang_sa_ganoon_ay_hindi_ka_magutom">Kumain ka, nang (sa ganoon ay) hindi ka magutom.
+    </string>
 </resources>

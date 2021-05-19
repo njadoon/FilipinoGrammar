@@ -6,6 +6,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" tools:layout_editor_absoluteY="185dp"
         tools:layout_editor_absoluteX="129dp"
+        android:background="@drawable/bg"
         android:fillViewport="true">
     <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -13,48 +14,63 @@
             tools:context=".Leksiyon_Activity">
 
         <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="319dp"
+                android:layout_height="94dp"
                 android:id="@+id/text1"
                 android:layout_centerHorizontal="true"
                 android:text="@string/ang_salitang_nang_ay_isang_pagsabay_at_ang_salin_nito_sa_ingles_ay_when_so_that"
                 android:textSize="20sp"
                 android:textAlignment="viewStart"
                 app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" android:layout_marginTop="56dp"
-                app:layout_constraintHorizontal_bias="0.0">
+                app:layout_constraintStart_toStartOf="parent" android:layout_marginTop="72dp"
+                app:layout_constraintHorizontal_bias="0.173">
         </TextView>
+
         <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="314dp"
+                android:layout_height="93dp"
                 android:id="@+id/text2"
                 android:text="@string/halimbawa_nagulat_ako_nang_nakita_ko_sila"
                 android:textSize="20sp"
                 android:textAlignment="viewStart"
                 android:layout_alignParentTop="true" app:layout_constraintTop_toBottomOf="@+id/text1"
                 app:layout_constraintEnd_toEndOf="@+id/text1" app:layout_constraintStart_toStartOf="@+id/text1"
-                app:layout_constraintHorizontal_bias="0.0" android:layout_marginTop="184dp">
+                app:layout_constraintHorizontal_bias="1.0" android:layout_marginTop="56dp">
         </TextView>
-
         <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="323dp"
+                android:layout_height="82dp"
                 android:id="@+id/text3"
                 android:text="@string/kumain_ka_nang_sa_ganoon_ay_hindi_ka_magutom"
                 android:textSize="20sp"
                 android:textAlignment="viewStart"
                 android:layout_alignParentTop="true" app:layout_constraintTop_toBottomOf="@+id/text2"
                 app:layout_constraintStart_toStartOf="@+id/text2" app:layout_constraintEnd_toEndOf="@+id/text2"
-                android:layout_marginTop="188dp" app:layout_constraintHorizontal_bias="1.0">
+                android:layout_marginTop="124dp" app:layout_constraintHorizontal_bias="0.542">
+        </TextView>
+
+        <TextView
+                android:layout_width="335dp"
+                android:layout_height="52dp"
+                android:id="@+id/text4"
+                android:text="The word nang also denotes an adverb or adverbial phrase."
+                android:textSize="20sp"
+                android:textAlignment="viewStart"
+                android:layout_alignParentTop="true"
+                app:layout_constraintStart_toStartOf="@+id/text3" app:layout_constraintEnd_toEndOf="@+id/text3"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintTop_toBottomOf="@+id/text3" android:layout_marginTop="76dp">
         </TextView>
         <Button
-                android:text="@string/button"
+                android:text="SKIP TO QUIZ"
                 android:layout_width="wrap_content"
+                android:textColor="@color/colorPrimary"
+                android:background="@drawable/whitebg"
                 android:layout_height="wrap_content" android:id="@+id/btnskip"
-                app:layout_constraintEnd_toEndOf="@+id/text3"
-                app:layout_constraintStart_toStartOf="@+id/text3"
-                app:layout_constraintTop_toBottomOf="@+id/text3"
-                app:layout_constraintHorizontal_bias="0.498" android:layout_marginTop="184dp"/>
+                app:layout_constraintEnd_toEndOf="@+id/text4"
+                app:layout_constraintStart_toStartOf="@+id/text4"
+                app:layout_constraintTop_toBottomOf="@+id/text4"
+                app:layout_constraintHorizontal_bias="0.54" android:layout_marginTop="172dp"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

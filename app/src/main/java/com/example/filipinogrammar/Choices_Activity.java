@@ -6,13 +6,13 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class Choice_Activity extends AppCompatActivity {
+public class Choices_Activity extends AppCompatActivity {
     Button leksiyonbtn, pagsusulitbtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_choice_);
+        setContentView(R.layout.activity_choices_);
 
         leksiyonbtn = (Button) findViewById(R.id.btnlesson);
         leksiyonbtn.setOnClickListener(new View.OnClickListener() {

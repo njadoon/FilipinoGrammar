@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
             if (etName.getText().toString().isEmpty()){
                 Toast.makeText(getApplicationContext(), "Please enter your name", Toast.LENGTH_SHORT).show();
             } else {
-                Intent intent = new Intent(this, Choice_Activity.class);
+                Intent intent = new Intent(this, Choices_Activity.class);
                 startActivity(intent);
                 finish();
             }

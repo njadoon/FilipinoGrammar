@@ -14,13 +14,13 @@ public class Leksiyon_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_leksiyon);
 
-        /*nextbtn = (Button) findViewById(R.id.btnNext);
+        nextbtn = (Button) findViewById(R.id.btnNext);
         nextbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openNextActivity();
             }
-        });*/
+        });
 
         qzskpbtn = (Button) findViewById(R.id.btnskip);
         qzskpbtn.setOnClickListener(new View.OnClickListener() {
@@ -30,10 +30,10 @@ public class Leksiyon_Activity extends AppCompatActivity {
             }
         });
     }
-    /*public void openNextActivity() {
-        Intent intent = new Intent(this, LeksiyonA2_Activity.class);
+    public void openNextActivity() {
+        Intent intent = new Intent(this, Leksiyon_Activity.class);
         startActivity(intent);
-    }*/
+    }
     public void openSkiponQuizActivity() {
         Intent intent = new Intent(this, questions.class);
         startActivity(intent);

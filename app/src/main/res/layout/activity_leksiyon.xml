@@ -23,7 +23,7 @@
                 app:layout_constraintStart_toStartOf="parent" android:layout_marginTop="30dp"/>
         <View
                 android:layout_width="390dp"
-                android:layout_height="1000dp" android:id="@+id/view4"
+                android:layout_height="1400dp" android:id="@+id/view4"
                 app:layout_constraintEnd_toEndOf="@+id/text1" app:layout_constraintTop_toTopOf="@+id/text1"
                 app:layout_constraintBottom_toBottomOf="@+id/text1" app:layout_constraintVertical_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/text1" android:background="@drawable/background"/>
@@ -36,7 +36,7 @@
                 android:text=""
                 android:textSize="20sp"
                 android:textAlignment="viewStart"
-                app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/lesson1" app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" android:layout_marginTop="100dp"
         >
         </TextView>
@@ -54,7 +54,7 @@
                 app:layout_constraintHorizontal_bias="0.541"
                 android:layout_marginTop="40dp"/>
         <Button
-                android:text="SKIP TO QUIZ"
+                android:text="GO TO QUIZ"
                 android:layout_width="wrap_content"
                 android:textColor="@color/colorPrimary"
                 android:background="@drawable/whitebg"

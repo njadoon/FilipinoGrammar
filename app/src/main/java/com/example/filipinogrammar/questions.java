@@ -1,6 +1,7 @@
 package com.example.filipinogrammar;
+import android.annotation.SuppressLint;
+import android.graphics.Color;
 import android.os.CountDownTimer;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -19,7 +20,7 @@ public class questions extends AppCompatActivity {
     private int questionNumber = 1;
     QuestionPack current = new QuestionPack();
     int n = 0;
-    int questions[] = new int[10];
+    int[] questions = new int[10];
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +37,16 @@ public class questions extends AppCompatActivity {
         btnChoice4 = findViewById(R.id.choice4);
         btnNext = findViewById(R.id.btnNext);
         btnStart = findViewById(R.id.btnStartQuiz);
+        Random random = new Random();
+        for (int i = 0; i < questions.length; i++) {
+            questions[i] = random.nextInt(39);
+            for (int j = 0; j < i; j++) {
+                if (questions[i] == questions[j]) {
+                    i--;
+                    break;
+                }
+            }
+        }
         updateQuestion(n);
         btnChoice1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,7 +54,10 @@ public class questions extends AppCompatActivity {
                 btnChoicesOff();
                 if (btnChoice1.getText() == answer) {
                     score++;
-                }
+                    btnChoice1.setBackgroundColor(Color.green(255));
+                }else
+                    btnChoice1.setBackgroundColor(Color.red(255));
+
             }
         });
         btnChoice2.setOnClickListener(new View.OnClickListener() {
@@ -52,7 +66,9 @@ public class questions extends AppCompatActivity {
                 btnChoicesOff();
                 if (btnChoice1.getText() == answer) {
                     score++;
-                }
+                    btnChoice2.setBackgroundColor(Color.green(255));
+                }else
+                    btnChoice2.setBackgroundColor(Color.red(255));
             }
         });
         btnChoice3.setOnClickListener(new View.OnClickListener() {
@@ -61,7 +77,9 @@ public class questions extends AppCompatActivity {
                 btnChoicesOff();
                 if (btnChoice1.getText() == answer) {
                     score++;
-                }
+                    btnChoice3.setBackgroundColor(Color.green(255));
+                }else
+                    btnChoice3.setBackgroundColor(Color.red(255));
             }
         });
         btnChoice4.setOnClickListener(new View.OnClickListener() {
@@ -70,18 +88,20 @@ public class questions extends AppCompatActivity {
                 btnChoicesOff();
                 if (btnChoice1.getText() == answer) {
                     score++;
-                }
+                    btnChoice4.setBackgroundColor(Color.green(255));
+                } else
+                    btnChoice4.setBackgroundColor(Color.red(255));
             }
         });
         btnNext.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("SetTextI18n")
             @Override
             public void onClick(View v) {
                 n++;
                 questionNumber++;
-                tvQuestionNo.setText(questionNumber + "/10");
+                tvQuestionNo.setText(score + "/10");
                 updateQuestion(n);
                 btnChoicesOn();
-                btnNext.setEnabled(false);
             }
         });
         btnStart.setOnClickListener(new View.OnClickListener() {
@@ -112,11 +132,13 @@ public class questions extends AppCompatActivity {
         btnChoice2.setEnabled(false);
         btnChoice3.setEnabled(false);
         btnChoice4.setEnabled(false);
+        btnNext.setEnabled(true);
     }
     public void btnChoicesOn(){
         btnChoice1.setEnabled(true);
         btnChoice2.setEnabled(true);
         btnChoice3.setEnabled(true);
         btnChoice4.setEnabled(true);
+        btnNext.setEnabled(false);
     }
 }

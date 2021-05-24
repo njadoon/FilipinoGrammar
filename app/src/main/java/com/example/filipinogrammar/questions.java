@@ -17,7 +17,7 @@ public class questions extends AppCompatActivity {
     private String answer;
     private int score;
     private int questionNumber = 1;
-    private QuestionPack current;
+    QuestionPack current = new QuestionPack();
     int n = 0;
     int questions[] = new int[10];
     @Override
@@ -36,6 +36,7 @@ public class questions extends AppCompatActivity {
         btnChoice4 = findViewById(R.id.choice4);
         btnNext = findViewById(R.id.btnNext);
         btnStart = findViewById(R.id.btnStartQuiz);
+        updateQuestion(n);
         btnChoice1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -86,22 +87,16 @@ public class questions extends AppCompatActivity {
         btnStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.e("hereeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee","questionNumber");
+                view.setVisibility(View.GONE);
+                btnStart.setVisibility(View.GONE);
+                quiz.setVisibility(View.GONE);
+                fil.setVisibility(View.GONE);
                 btnChoice1.setVisibility(View.VISIBLE);
                 btnChoice2.setVisibility(View.VISIBLE);
                 btnChoice3.setVisibility(View.VISIBLE);
                 btnChoice4.setVisibility(View.VISIBLE);
 
-                Random random = new Random();
-                for (int i = 0; i < questions.length; i++) {
-                    questions[i] = random.nextInt(39);
-                    for (int j = 0; j < i; j++) {
-                        if (questions[i] == questions[j]) {
-                            i--;
-                            break;
-                        }
-                    }
-                } updateQuestion(n);
+                updateQuestion(n);
             }
         });
     }

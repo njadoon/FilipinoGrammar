@@ -56,7 +56,7 @@
             android:layout_height="wrap_content" android:id="@+id/choice1"
             app:layout_constraintTop_toBottomOf="@+id/view2" app:layout_constraintEnd_toEndOf="@+id/view2"
             app:layout_constraintStart_toStartOf="@+id/view2" android:layout_marginTop="15dp"
-            android:background="@drawable/unselected" android:padding="10dp" android:visibility="invisible"/>
+            android:background="@drawable/unselected" android:padding="10dp" android:visibility="visible"/>
 
     <androidx.appcompat.widget.AppCompatButton
             android:text="nang"
@@ -64,7 +64,7 @@
             android:layout_height="wrap_content" android:id="@+id/choice2"
             app:layout_constraintEnd_toEndOf="@+id/view2" app:layout_constraintStart_toStartOf="@+id/view2"
             app:layout_constraintTop_toBottomOf="@+id/choice1" android:background="@drawable/unselected"
-            android:layout_marginTop="15dp" android:padding="10dp" android:visibility="invisible"/>
+            android:layout_marginTop="15dp" android:padding="10dp" android:visibility="visible"/>
 
     <androidx.appcompat.widget.AppCompatButton
             android:text="na"
@@ -72,7 +72,7 @@
             android:layout_height="wrap_content" android:id="@+id/choice3"
             app:layout_constraintEnd_toEndOf="@+id/view2" app:layout_constraintStart_toStartOf="@+id/view2"
             app:layout_constraintTop_toBottomOf="@+id/choice2" android:background="@drawable/unselected"
-            android:layout_marginTop="15dp" android:padding="10dp" android:visibility="invisible"/>
+            android:layout_marginTop="15dp" android:padding="10dp" android:visibility="visible"/>
 
     <androidx.appcompat.widget.AppCompatButton
             android:text="nung"
@@ -80,7 +80,7 @@
             android:layout_height="wrap_content" android:id="@+id/choice4"
             app:layout_constraintEnd_toEndOf="@+id/view2" app:layout_constraintStart_toStartOf="@+id/view2"
             app:layout_constraintTop_toBottomOf="@+id/choice3" android:background="@drawable/unselected"
-            android:layout_marginTop="15dp" android:padding="10dp" android:visibility="invisible"/>
+            android:layout_marginTop="15dp" android:padding="10dp" android:visibility="visible"/>
 
     <androidx.appcompat.widget.AppCompatButton
             android:text="Next"
@@ -89,7 +89,7 @@
             app:layout_constraintTop_toBottomOf="@+id/choice4" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/btnQuit" app:layout_constraintHorizontal_bias="0.5"
             android:background="@drawable/button_2" android:layout_marginEnd="32dp" android:layout_marginTop="24dp"
-            android:layout_marginStart="8dp" android:visibility="invisible"/>
+            android:layout_marginStart="8dp" android:visibility="visible"/>
 
     <androidx.appcompat.widget.AppCompatButton
             android:text="Quit"
@@ -99,11 +99,11 @@
             app:layout_constraintHorizontal_bias="0.5" app:layout_constraintEnd_toStartOf="@+id/btnNext"
             app:layout_constraintHorizontal_chainStyle="packed" android:layout_marginStart="32dp"
             android:background="@drawable/button_1" android:layout_marginTop="24dp" android:layout_marginEnd="8dp"
-            android:visibility="invisible"/>
+            android:visibility="visible"/>
     <LinearLayout android:layout_width="match_parent"
                   android:layout_height="match_parent"
                   android:orientation="vertical"
-                  android:visibility="visible">
+                  android:visibility="gone">
         <View
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" android:id="@+id/view5" android:background="@drawable/bg"
@@ -116,19 +116,19 @@
             android:layout_height="wrap_content" android:id="@+id/btnStartQuiz"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/fil" android:text="START" android:layout_marginTop="24dp"
-            android:visibility="visible"/>
+            android:visibility="gone"/>
     <TextView
             android:layout_width="300dp"
             android:layout_height="100dp" android:id="@+id/quiz"
             android:background="@drawable/quizicon" app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="@+id/view"
-            app:layout_constraintBottom_toBottomOf="@+id/choice3" android:visibility="visible"/>
+            app:layout_constraintBottom_toBottomOf="@+id/choice3" android:visibility="gone"/>
     <TextView
             android:layout_width="300dp"
             android:layout_height="50dp" android:id="@+id/fil"
             app:layout_constraintBottom_toTopOf="@+id/btnStartQuiz"
             app:layout_constraintTop_toBottomOf="@+id/quiz" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" android:background="@drawable/fil"
-            android:visibility="visible"/>
+            android:visibility="gone"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

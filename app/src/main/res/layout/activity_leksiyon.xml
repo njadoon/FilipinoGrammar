@@ -15,7 +15,7 @@
 
 
         <TextView
-                android:text="Leksiyon I"
+                android:text=""
                 android:textSize="35sp"
                 android:layout_width="wrap_content"
                 android:textColor="@color/colorPrimary"
@@ -24,7 +24,7 @@
                 app:layout_constraintStart_toStartOf="parent" android:layout_marginTop="30dp"/>
         <View
                 android:layout_width="390dp"
-                android:layout_height="1500dp" android:id="@+id/view4"
+                android:layout_height="1000dp" android:id="@+id/view4"
                 app:layout_constraintEnd_toEndOf="@+id/text1" app:layout_constraintTop_toTopOf="@+id/text1"
                 app:layout_constraintBottom_toBottomOf="@+id/text1" app:layout_constraintVertical_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/text1" android:background="@drawable/background"/>
@@ -34,8 +34,7 @@
                 android:id="@+id/text1"
                 android:textColor="@color/white"
                 android:layout_centerHorizontal="true"
-                android:text="Ang salitang 'nang' ay isang pagsabay at ang salin nito sa ingles ay when so that\n\nHalimbawa: \na) 'Nagulat ako nang nakita ko sila'\nb) 'Kumain ka na, nang (sa ganoon ay) hindi ka na magutom'\n\nAng salitang nang ay nangangahulugan din ng isang pang-abay o pariralang pang-abay.\n\nInilalarawan ng pang-abay ang pandiwa, Halimbawa:\na) Kumain ka na. - Kumain ka nang marami.
-\nb) Uminom ka. - Uminom ka nang kaunti.\nc) Sila ay tumakbo. - Sila ay tumakbo nang mabilis.\n"
+                android:text=""
                 android:textSize="20sp"
                 android:textAlignment="viewStart"
                 app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
@@ -49,7 +48,7 @@
                 android:layout_width="wrap_content"
                 android:textColor="@color/colorPrimary"
                 android:background="@drawable/whitebg"
-                android:layout_height="wrap_content" android:id="@+id/btnnext"
+                android:layout_height="wrap_content" android:id="@+id/btnNext"
                 app:layout_constraintEnd_toEndOf="@+id/text1"
                 app:layout_constraintStart_toStartOf="@+id/text1"
                 app:layout_constraintTop_toBottomOf="@+id/text1"
@@ -61,9 +60,9 @@
                 android:textColor="@color/colorPrimary"
                 android:background="@drawable/whitebg"
                 android:layout_height="wrap_content" android:id="@+id/btnskip"
-                app:layout_constraintEnd_toEndOf="@+id/btnnext"
-                app:layout_constraintStart_toStartOf="@+id/btnnext"
-                app:layout_constraintTop_toBottomOf="@+id/btnnext"
+                app:layout_constraintEnd_toEndOf="@+id/btnNext"
+                app:layout_constraintStart_toStartOf="@+id/btnNext"
+                app:layout_constraintTop_toBottomOf="@+id/btnNext"
                 app:layout_constraintHorizontal_bias="0.54"
                 android:layout_marginTop="20dp"/>
 

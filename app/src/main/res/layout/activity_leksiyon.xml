@@ -13,7 +13,6 @@
             android:layout_height="wrap_content"
             tools:context=".Leksiyon_Activity">
 
-
         <TextView
                 android:text=""
                 android:textSize="35sp"

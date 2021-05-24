@@ -95,7 +95,6 @@ public class questions extends AppCompatActivity {
                 btnChoice2.setVisibility(View.VISIBLE);
                 btnChoice3.setVisibility(View.VISIBLE);
                 btnChoice4.setVisibility(View.VISIBLE);
-
                 updateQuestion(n);
             }
         });

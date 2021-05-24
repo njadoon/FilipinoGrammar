@@ -1,63 +1,109 @@
 package com.example.filipinogrammar;
-
 public class QuestionPack {
-    private String question, choice1, choice2, choice3, choice4;
-    private int correctAns;
-
-    public QuestionPack(String question, String choice1, String choice2, String choice3, String choice4, int correctAns) {
-        this.question = question;
-        this.choice1 = choice1;
-        this.choice2 = choice2;
-        this.choice3 = choice3;
-        this.choice4 = choice4;
-        this.correctAns = correctAns;
-    }
-
-    public String getQuestion() {
+    private String questions [] = {
+            "Ginawa ____ mga estudyante ang kanilang proyekto.",
+            "Si Joseph ay pinuno ____ aming grupo.",
+            "Umiinom si Ali ____ gamot bago matulog.",
+            "Kumain ____ kumain ang nagugutom na bata.",
+            "Nakita ____ tatay ang mahirap na bata.",
+            "Magsumikap ka ____ ang buhay mo'y guminhawa.",
+            "Sumasagot kami ng takdang aralin ____ dumating si Alex.",
+            "____ kumakatok sa labas.",
+            "____ maganda siyang anak.",
+            "____ mga babaeng naghihintay sa iyo.",
+            "____ lapis siyang dala.",
+            "Kakain ____ si Omar dito.",
+            "Bababa ____ si mama ngayon.",
+            "Panget ____ ung teleserye sabi ni Valdez.",
+            "Sasama ____ si Jayson sa atin.",
+            "Buksan mo nga ang ____.",
+            "Nangyari ang suntukan sa may ____.",
+            "Nag mamadaling inakyat ni James ang mga ____.",
+            "Ilagay mo ang ____ sa tapat ng bintana.",
+            "____ mo ang mga luha sa iyong mga mata.",
+            "____ mo ng palaman ang tinapay.",
+            "____ mo ang pawis sa iyong likod.",
+            "____ mo ng alkohol ang iyong binti.",
+            "____ ang tiyan ni Aaron sa Lunes.",
+            "____ si Aaron sa tiyan sa Lunes.",
+            "____ ninyo ang mga kalat sa sahig.",
+            "____ ninyo ang sahig.",
+            "Nakatatlong ____ muana sila bago natunton ang daan patungo sa loob ng kuweba.",
+            "____ mong lagi ang sinasabi ng iyong mga magulang.",
+            "____ mo siya para hindi siya maligaw.",
+            "____ mo sa anim ang manok.",
+            "____ mo ang pagkain sa mga bata.",
+            "Manood ____ ng sine."
+    };
+    private String[][] choices = {
+            {"ng", "nang", "na", "nung"},
+            {"nang", "na", "ng", "ni"},
+            {"ng", "nang", "na", "nung"},
+            {"nang", "na", "ng", "ni"},
+            {"ng", "nang", "na", "nung"},
+            {"nang", "na", "ng", "ni"},
+            {"ng", "nang", "na", "nung"},
+            {"Mayroon","May","Meron","Meyron"},
+            {"Meyron","Mayroon","May","Meron"},
+            {"Mayroon","May","Meron","Meyron"},
+            {"Meyron","Mayroon","May","Meron"},
+            {"din","raw","rin","ng"},
+            {"daw","raw","din","nang"},
+            {"daw","raw","rin","ng"},
+            {"daw","rin","din","nang"},
+            {"pintuan","dor","pinto","pintoan"},
+            {"pintuan","dor","pinto","pintoan"},
+            {"pintuan","hagdanan","pinto","hagdan"},
+            {"pintuan","hagdanan","pinto","hagdan"},
+            {"Punasin","Pahiran","Punasan","Pahirin"},
+            {"Punasin","Pahiran","Punasan","Pahirin"},
+            {"Punasin","Pahiran","Punasan","Pahirin"},
+            {"Punasin","Pahiran","Punasan","Pahirin"},
+            {"Ooperahan","Mag-opera","Ma-operahan","Ooperahin"},
+            {"Ooperahan","Mag-opera","Ma-operahan","Ooperahin"},
+            {"Punasan","Walisan","Walisin","Pahian"},
+            {"Punasan","Walisan","Walisin","Pahian"},
+            {"ikot","ikit","ikut","ikat"},
+            {"Sunorin","Sunodin","Sundin","Sundan"},
+            {"Sunorin","Sunodin","Sundin","Sundan"},
+            {"Hatian","Hatiin","Hinahatian","Paghatian"},
+            {"Hinahatian","Hatiin","Hatian","Paghatian"},
+            {"kila","kita","kata","kina"}
+    };
+    private String[] correctAnswer = {
+            "ng", "ng", "ng",
+            "nang", "nang", "nang", "nang",
+            "May", "May", "May", "May",
+            "din", "raw", "daw", "rin",
+            "pinto", "pintuan", "hagdan", "hagdanan",
+            "Pahirin", "Pahiran", "Punasin", "Punasan",
+            "Ooperahin", "Ooperahan", "Walisin", "Walisan",
+            "ikit",
+            "Sundin", "Sundan",
+            "kata"
+    };
+    public String getQuestion(int a){
+        String question = questions[a];
         return question;
     }
-
-    public void setQuestion(String question) {
-        this.question = question;
+    public String getChoice1 ( int a){
+        String choice = choices[a][0];
+        return choice;
     }
-
-    public String getChoice1() {
-        return choice1;
+    public String getChoice2 ( int a){
+        String choice = choices[a][1];
+        return choice;
     }
-
-    public void setChoice1(String choice1) {
-        this.choice1 = choice1;
+    public String getChoice3 ( int a){
+        String choice = choices[a][2];
+        return choice;
     }
-
-    public String getChoice2() {
-        return choice2;
+    public String getChoice4 ( int a){
+        String choice = choices[a][3];
+        return choice;
     }
-
-    public void setChoice2(String choice2) {
-        this.choice2 = choice2;
-    }
-
-    public String getChoice3() {
-        return choice3;
-    }
-
-    public void setChoice3(String choice3) {
-        this.choice3 = choice3;
-    }
-
-    public String getChoice4() {
-        return choice4;
-    }
-
-    public void setChoice4(String choice4) {
-        this.choice4 = choice4;
-    }
-
-    public int getCorrectAns() {
-        return correctAns;
-    }
-
-    public void setCorrectAns(int correctAns) {
-        this.correctAns = correctAns;
+    public String getCorrectAnswer ( int a){
+        String answer = correctAnswer[a];
+        return answer;
     }
 }

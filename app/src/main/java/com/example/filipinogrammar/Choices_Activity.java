@@ -1,7 +1,6 @@
 package com.example.filipinogrammar;
 
 import android.content.Intent;
-import android.view.View;
 import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,19 +14,9 @@ public class Choices_Activity extends AppCompatActivity {
         setContentView(R.layout.activity_choices_);
 
         btnLeksiyon = findViewById(R.id.btnlesson);
-        btnLeksiyon.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openLeksiyonActivity();
-            }
-        });
+        btnLeksiyon.setOnClickListener(v -> openLeksiyonActivity());
         btnPagsususlit = findViewById(R.id.btnQuiz);
-        btnPagsususlit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openQuizActivity();
-            }
-        });
+        btnPagsususlit.setOnClickListener(v -> openQuizActivity());
     }
     public void openLeksiyonActivity() {
         Intent intent = new Intent(this, Lesson.class);

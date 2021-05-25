@@ -1,6 +1,6 @@
 package com.example.filipinogrammar;
 public class QuestionPack {
-    private String questions [] = {
+    private final String[] questions = {
             "Ginawa ____ mga estudyante ang kanilang proyekto.",
             "Si Joseph ay pinuno ____ aming grupo.",
             "Umiinom si Ali ____ gamot bago matulog.",
@@ -35,7 +35,7 @@ public class QuestionPack {
             "____ mo ang pagkain sa mga bata.",
             "Manood ____ ng sine."
     };
-    private String[][] choices = {
+    private final String[][] choices = {
             {"ng", "nang", "na", "nung"},
             {"nang", "na", "ng", "ni"},
             {"ng", "nang", "na", "nung"},
@@ -70,40 +70,57 @@ public class QuestionPack {
             {"Hinahatian","Hatiin","Hatian","Paghatian"},
             {"kila","kita","kata","kina"}
     };
-    private String[] correctAnswer = {
-            "ng", "ng", "ng",
-            "nang", "nang", "nang", "nang",
-            "May", "May", "May", "May",
-            "din", "raw", "daw", "rin",
-            "pinto", "pintuan", "hagdan", "hagdanan",
-            "Pahirin", "Pahiran", "Punasin", "Punasan",
-            "Ooperahin", "Ooperahan", "Walisin", "Walisan",
+    private final String[] correctAnswer = {
+            "ng",
+            "ng",
+            "ng",
+            "nang",
+            "nang",
+            "nang",
+            "nang",
+            "May",
+            "May",
+            "May",
+            "May",
+            "din",
+            "raw",
+            "daw",
+            "rin",
+            "pinto",
+            "pintuan",
+            "hagdan",
+            "hagdanan",
+            "Pahirin",
+            "Pahiran",
+            "Punasin",
+            "Punasan",
+            "Ooperahin",
+            "Ooperahan",
+            "Walisin",
+            "Walisan",
             "ikit",
-            "Sundin", "Sundan",
+            "Sundin",
+            "Sundan",
+            "Hatiin",
+            "Hatian",
             "kata"
     };
     public String getQuestion(int a){
-        String question = questions[a];
-        return question;
+        return questions[a];
     }
     public String getChoice1 ( int a){
-        String choice = choices[a][0];
-        return choice;
+        return choices[a][0];
     }
     public String getChoice2 ( int a){
-        String choice = choices[a][1];
-        return choice;
+        return choices[a][1];
     }
     public String getChoice3 ( int a){
-        String choice = choices[a][2];
-        return choice;
+        return choices[a][2];
     }
     public String getChoice4 ( int a){
-        String choice = choices[a][3];
-        return choice;
+        return choices[a][3];
     }
     public String getCorrectAnswer ( int a){
-        String answer = correctAnswer[a];
-        return answer;
+        return correctAnswer[a];
     }
 }

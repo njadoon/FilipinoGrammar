@@ -34,7 +34,7 @@
     <TextView
             android:text="1/10"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/questionNo" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_height="wrap_content" android:id="@+id/tvQuestionNo" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" android:layout_marginEnd="16dp" android:layout_marginTop="24dp"
             android:textSize="20sp" android:textColor="@color/white" android:fontFamily="sans-serif-black"
             android:drawableRight="@drawable/ic_question" android:drawablePadding="10dp"
@@ -49,38 +49,41 @@
             android:textColor="#FFFFFF" android:textSize="24dp" android:gravity="center"
             android:layout_marginStart="16dp" android:layout_marginEnd="16dp" android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp" android:visibility="visible"/>
-    <androidx.appcompat.widget.AppCompatButton
-
+    <TextView
             android:text="ng"
             android:layout_width="0dp"
             android:layout_height="wrap_content" android:id="@+id/choice1"
             app:layout_constraintTop_toBottomOf="@+id/view2" app:layout_constraintEnd_toEndOf="@+id/view2"
-            app:layout_constraintStart_toStartOf="@+id/view2" android:layout_marginTop="15dp"
-            android:background="@drawable/unselected" android:padding="10dp" android:visibility="visible"/>
+            app:layout_constraintStart_toStartOf="@+id/view2" android:layout_marginTop="20dp"
+            android:background="@drawable/unselected" android:padding="10dp" android:visibility="visible"
+            android:gravity="center" android:textSize="18sp"/>
 
-    <androidx.appcompat.widget.AppCompatButton
+    <TextView
             android:text="nang"
             android:layout_width="0dp"
             android:layout_height="wrap_content" android:id="@+id/choice2"
             app:layout_constraintEnd_toEndOf="@+id/view2" app:layout_constraintStart_toStartOf="@+id/view2"
             app:layout_constraintTop_toBottomOf="@+id/choice1" android:background="@drawable/unselected"
-            android:layout_marginTop="15dp" android:padding="10dp" android:visibility="visible"/>
+            android:layout_marginTop="20dp" android:padding="10dp" android:visibility="visible"
+            android:gravity="center" android:textSize="18sp"/>
 
-    <androidx.appcompat.widget.AppCompatButton
+    <TextView
             android:text="na"
             android:layout_width="0dp"
             android:layout_height="wrap_content" android:id="@+id/choice3"
             app:layout_constraintEnd_toEndOf="@+id/view2" app:layout_constraintStart_toStartOf="@+id/view2"
             app:layout_constraintTop_toBottomOf="@+id/choice2" android:background="@drawable/unselected"
-            android:layout_marginTop="15dp" android:padding="10dp" android:visibility="visible"/>
+            android:layout_marginTop="20dp" android:padding="10dp" android:visibility="visible"
+            android:gravity="center" android:textSize="18sp"/>
 
-    <androidx.appcompat.widget.AppCompatButton
+    <TextView
             android:text="nung"
             android:layout_width="0dp"
             android:layout_height="wrap_content" android:id="@+id/choice4"
             app:layout_constraintEnd_toEndOf="@+id/view2" app:layout_constraintStart_toStartOf="@+id/view2"
             app:layout_constraintTop_toBottomOf="@+id/choice3" android:background="@drawable/unselected"
-            android:layout_marginTop="15dp" android:padding="10dp" android:visibility="visible"/>
+            android:layout_marginTop="20dp" android:padding="10dp" android:visibility="visible"
+            android:gravity="center" android:textSize="18sp"/>
 
     <androidx.appcompat.widget.AppCompatButton
             android:text="Next"
@@ -89,7 +92,10 @@
             app:layout_constraintTop_toBottomOf="@+id/choice4" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/btnQuit" app:layout_constraintHorizontal_bias="0.5"
             android:background="@drawable/button_2" android:layout_marginEnd="32dp" android:layout_marginTop="24dp"
-            android:layout_marginStart="8dp" android:visibility="visible" android:enabled="false"/>
+            android:layout_marginStart="8dp" android:visibility="visible" android:enabled="false"
+            android:drawableRight="@drawable/arrow1" android:drawableTint="@color/colorWhite"
+            android:paddingLeft="@dimen/_15sdp" android:paddingRight="@dimen/_15sdp" android:textColor="#FFFFFF"
+            android:fontFamily="sans-serif-medium" android:textSize="18sp"/>
 
     <androidx.appcompat.widget.AppCompatButton
             android:text="Quit"
@@ -97,8 +103,9 @@
             android:layout_height="wrap_content" android:id="@+id/btnQuit"
             app:layout_constraintTop_toBottomOf="@+id/choice4" app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintHorizontal_bias="0.5" app:layout_constraintEnd_toStartOf="@+id/btnNext"
-            app:layout_constraintHorizontal_chainStyle="packed" android:layout_marginStart="32dp"
+            app:layout_constraintHorizontal_chainStyle="spread" android:layout_marginStart="32dp"
             android:background="@drawable/button_1" android:layout_marginTop="24dp" android:layout_marginEnd="8dp"
-            android:visibility="visible"/>
+            android:visibility="visible" android:textColor="#FFFFFF" android:fontFamily="sans-serif-medium"
+            android:textSize="18sp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

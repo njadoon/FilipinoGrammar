@@ -24,8 +24,9 @@ public class Lesson extends AppCompatActivity {
         String lessonHeader = current.getLessonHeader(0);
         String lesson = current.getLesson(0);
 
-        tvLessonHeader.setText((lessonHeader));
-        tvLesson.setText((lesson));
+        tvLessonHeader.setText(lessonHeader);
+        tvLesson.setText(lesson);
+
         tvLesson.setMovementMethod(new ScrollingMovementMethod());
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override

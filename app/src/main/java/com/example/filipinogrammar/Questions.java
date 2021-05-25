@@ -12,9 +12,9 @@ public class Questions extends AppCompatActivity {
     CountDownTimer timer;
     int timerValue = 15;
     private View view;
-    private TextView tvQuestion, tvQuestionNo;
-    private Button btnNext, btnChoice1, btnChoice2, btnChoice3, btnChoice4;
-    private String answer;
+    private TextView tvQuestion, tvQuestionNo, btnChoice1, btnChoice2, btnChoice3, btnChoice4;
+    private Button btnNext;
+    String question, choice1, choice2, choice3, choice4, answer;
     private int score;
     private int questionNumber = 1;
     QuestionPack current = new QuestionPack();
@@ -25,7 +25,7 @@ public class Questions extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_questions);
         tvQuestion = findViewById(R.id.question);
-        tvQuestionNo = findViewById(R.id.questionNo);
+        tvQuestionNo = findViewById(R.id.tvQuestionNo);
 //        timer = findViewById(R.id.timer);
         btnChoice1 = findViewById(R.id.choice1);
         btnChoice2 = findViewById(R.id.choice2);
@@ -34,7 +34,7 @@ public class Questions extends AppCompatActivity {
         btnNext = findViewById(R.id.btnNext);
         Random random = new Random();
         for (int i = 0; i < questions.length; i++) {
-            questions[i] = random.nextInt(39);
+            questions[i] = random.nextInt(34);
             for (int j = 0; j < i; j++) {
                 if (questions[i] == questions[j]) {
                     i--;
@@ -47,6 +47,7 @@ public class Questions extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 btnChoicesOff();
+                System.out.println("Score = "+ score);
                 if (btnChoice1.getText() == answer) {
                     score++;
                     btnChoice1.setBackgroundColor(Color.green(255));
@@ -59,6 +60,7 @@ public class Questions extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 btnChoicesOff();
+                System.out.println("Score = "+ score);
                 if (btnChoice1.getText() == answer) {
                     score++;
                     btnChoice2.setBackgroundColor(Color.green(255));
@@ -70,6 +72,7 @@ public class Questions extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 btnChoicesOff();
+                System.out.println("Score = "+ score);
                 if (btnChoice1.getText() == answer) {
                     score++;
                     btnChoice3.setBackgroundColor(Color.green(255));
@@ -81,6 +84,7 @@ public class Questions extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 btnChoicesOff();
+                System.out.println("Score = "+ score);
                 if (btnChoice1.getText() == answer) {
                     score++;
                     btnChoice4.setBackgroundColor(Color.green(255));
@@ -92,19 +96,27 @@ public class Questions extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 questionNumber++;
-                tvQuestionNo.setText(score + "/10");
+                n++;
+                System.out.println("Question number "+ questionNumber);
+                System.out.println("Array number "+ n);
+                tvQuestionNo.setText(questionNumber + "/10");
                 updateQuestion(n);
                 btnChoicesOn();
             }
         });
             }
     private void updateQuestion(int n){
-        tvQuestion.setText(current.getQuestion(questions[n]));
-        btnChoice1.setText(current.getChoice1(questions[n]));
-        btnChoice2.setText(current.getChoice2(questions[n]));
-        btnChoice3.setText(current.getChoice3(questions[n]));
-        btnChoice4.setText(current.getChoice4(questions[n]));
+        question = current.getQuestion(questions[n]);
+        choice1 = current.getChoice1(questions[n]);
+        choice2 = current.getChoice2(questions[n]);
+        choice3 = current.getChoice3(questions[n]);
+        choice4 = current.getChoice4(questions[n]);
         answer = current.getCorrectAnswer(questions[n]);
+        tvQuestion.setText(question);
+        btnChoice1.setText(choice1);
+        btnChoice2.setText(choice2);
+        btnChoice3.setText(choice3);
+        btnChoice4.setText(choice4);
     }
     public void btnChoicesOff(){
         btnChoice1.setEnabled(false);

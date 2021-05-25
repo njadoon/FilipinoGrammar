@@ -1,5 +1,4 @@
 package com.example.filipinogrammar;
-import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.os.CountDownTimer;
 import android.view.View;
@@ -9,12 +8,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import java.util.Random;
 
-public class questions extends AppCompatActivity {
+public class Questions extends AppCompatActivity {
     CountDownTimer timer;
     int timerValue = 15;
     private View view;
-    private TextView tvQuestion, tvQuestionNo, quiz, fil;
-    private Button btnNext, btnChoice1, btnChoice2, btnChoice3, btnChoice4, btnStart;
+    private TextView tvQuestion, tvQuestionNo;
+    private Button btnNext, btnChoice1, btnChoice2, btnChoice3, btnChoice4;
     private String answer;
     private int score;
     private int questionNumber = 1;
@@ -26,9 +25,6 @@ public class questions extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_questions);
         tvQuestion = findViewById(R.id.question);
-        fil = findViewById(R.id.fil);
-        quiz = findViewById(R.id.quiz);
-        view = findViewById(R.id.view5);
         tvQuestionNo = findViewById(R.id.questionNo);
 //        timer = findViewById(R.id.timer);
         btnChoice1 = findViewById(R.id.choice1);
@@ -36,7 +32,6 @@ public class questions extends AppCompatActivity {
         btnChoice3 = findViewById(R.id.choice3);
         btnChoice4 = findViewById(R.id.choice4);
         btnNext = findViewById(R.id.btnNext);
-        btnStart = findViewById(R.id.btnStartQuiz);
         Random random = new Random();
         for (int i = 0; i < questions.length; i++) {
             questions[i] = random.nextInt(39);
@@ -94,31 +89,15 @@ public class questions extends AppCompatActivity {
             }
         });
         btnNext.setOnClickListener(new View.OnClickListener() {
-            @SuppressLint("SetTextI18n")
             @Override
             public void onClick(View v) {
-                n++;
                 questionNumber++;
                 tvQuestionNo.setText(score + "/10");
                 updateQuestion(n);
                 btnChoicesOn();
             }
         });
-        btnStart.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                view.setVisibility(View.GONE);
-                btnStart.setVisibility(View.GONE);
-                quiz.setVisibility(View.GONE);
-                fil.setVisibility(View.GONE);
-                btnChoice1.setVisibility(View.VISIBLE);
-                btnChoice2.setVisibility(View.VISIBLE);
-                btnChoice3.setVisibility(View.VISIBLE);
-                btnChoice4.setVisibility(View.VISIBLE);
-                updateQuestion(n);
             }
-        });
-    }
     private void updateQuestion(int n){
         tvQuestion.setText(current.getQuestion(questions[n]));
         btnChoice1.setText(current.getChoice1(questions[n]));

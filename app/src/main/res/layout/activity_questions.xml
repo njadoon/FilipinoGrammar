@@ -5,7 +5,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".questions"
+        tools:context=".Questions"
 >
     <View
             android:layout_width="wrap_content"
@@ -100,35 +100,5 @@
             app:layout_constraintHorizontal_chainStyle="packed" android:layout_marginStart="32dp"
             android:background="@drawable/button_1" android:layout_marginTop="24dp" android:layout_marginEnd="8dp"
             android:visibility="visible"/>
-    <LinearLayout android:layout_width="match_parent"
-                  android:layout_height="match_parent"
-                  android:orientation="vertical"
-                  android:visibility="gone">
-        <View
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" android:id="@+id/view5" android:background="@drawable/bg"
-                app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" app:layout_constraintBottom_toBottomOf="parent"/>
-
-    </LinearLayout>
-    <androidx.appcompat.widget.AppCompatButton
-            android:layout_width="150dp"
-            android:layout_height="wrap_content" android:id="@+id/btnStartQuiz"
-            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fil" android:text="START" android:layout_marginTop="24dp"
-            android:visibility="gone"/>
-    <TextView
-            android:layout_width="300dp"
-            android:layout_height="100dp" android:id="@+id/quiz"
-            android:background="@drawable/quizicon" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="@+id/view"
-            app:layout_constraintBottom_toBottomOf="@+id/choice3" android:visibility="gone"/>
-    <TextView
-            android:layout_width="300dp"
-            android:layout_height="50dp" android:id="@+id/fil"
-            app:layout_constraintBottom_toTopOf="@+id/btnStartQuiz"
-            app:layout_constraintTop_toBottomOf="@+id/quiz" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" android:background="@drawable/fil"
-            android:visibility="gone"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

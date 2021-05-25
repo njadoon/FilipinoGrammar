@@ -19,9 +19,9 @@
         </activity>
         <activity android:name=".Result_Activity">
         </activity>
-        <activity android:name=".Leksiyon_Activity">
+        <activity android:name=".Lesson">
         </activity>
-        <activity android:name=".questions">
+        <activity android:name=".Questions">
         </activity>
         <activity
                 android:name=".MainActivity"

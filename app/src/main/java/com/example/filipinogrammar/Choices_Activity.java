@@ -7,23 +7,22 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 public class Choices_Activity extends AppCompatActivity {
-    Button leksiyonbtn, pagsusulitbtn;
+    Button btnLeksiyon, btnPagsususlit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choices_);
 
-        leksiyonbtn = (Button) findViewById(R.id.btnlesson);
-        leksiyonbtn.setOnClickListener(new View.OnClickListener() {
+        btnLeksiyon = findViewById(R.id.btnlesson);
+        btnLeksiyon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openLeksiyonActivity();
             }
         });
-
-        pagsusulitbtn = (Button) findViewById(R.id.btnquiz);
-        pagsusulitbtn.setOnClickListener(new View.OnClickListener() {
+        btnPagsususlit = findViewById(R.id.btnQuiz);
+        btnPagsususlit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openQuizActivity();
@@ -31,11 +30,11 @@ public class Choices_Activity extends AppCompatActivity {
         });
     }
     public void openLeksiyonActivity() {
-        Intent intent = new Intent(this, Leksiyon_Activity.class);
+        Intent intent = new Intent(this, Lesson.class);
         startActivity(intent);
     }
     public void openQuizActivity() {
-        Intent intent = new Intent(this, questions.class);
+        Intent intent = new Intent(this, Questions.class);
         startActivity(intent);
     }
 }

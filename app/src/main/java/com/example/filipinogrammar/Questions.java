@@ -49,7 +49,7 @@ public class Questions extends AppCompatActivity {
 //            timer.cancel();
 //        }
 //        timer.start();
-        if (n < questions.length) {
+        if (questionNumber < questions.length) {
             btnChoicesOn();
             question = current.getQuestion(questions[n]);
             choice1 = current.getChoice1(questions[n]);
@@ -64,7 +64,12 @@ public class Questions extends AppCompatActivity {
             btnChoice4.setText(choice4);
         }else {
             Toast.makeText(this,"Quiz finished",Toast.LENGTH_SHORT).show();
+            openResults();
         }
+    }
+    public void openResults() {
+        Intent intent = new Intent(this, Result_Activity.class);
+        startActivity(intent);
     }
     public void btnChoicesOff(){
         btnChoice1.setEnabled(false);

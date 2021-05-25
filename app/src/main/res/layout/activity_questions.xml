@@ -56,7 +56,7 @@
             app:layout_constraintTop_toBottomOf="@+id/view2" app:layout_constraintEnd_toEndOf="@+id/view2"
             app:layout_constraintStart_toStartOf="@+id/view2" android:layout_marginTop="20dp"
             android:background="@drawable/unselected" android:padding="10dp"
-            android:gravity="center" android:textSize="18sp" android:onClick="onClick"/>
+            android:gravity="center" android:textSize="18sp" android:onClick="onClick" android:textColor="#000000"/>
 
     <TextView
             android:text="nang"
@@ -65,7 +65,7 @@
             app:layout_constraintEnd_toEndOf="@+id/view2" app:layout_constraintStart_toStartOf="@+id/view2"
             app:layout_constraintTop_toBottomOf="@+id/choice1" android:background="@drawable/unselected"
             android:layout_marginTop="20dp" android:padding="10dp"
-            android:gravity="center" android:textSize="18sp" android:onClick="onClick"/>
+            android:gravity="center" android:textSize="18sp" android:onClick="onClick" android:textColor="#000000"/>
 
     <TextView
             android:text="na"
@@ -74,7 +74,7 @@
             app:layout_constraintEnd_toEndOf="@+id/view2" app:layout_constraintStart_toStartOf="@+id/view2"
             app:layout_constraintTop_toBottomOf="@+id/choice2" android:background="@drawable/unselected"
             android:layout_marginTop="20dp" android:padding="10dp"
-            android:gravity="center" android:textSize="18sp" android:onClick="onClick"/>
+            android:gravity="center" android:textSize="18sp" android:onClick="onClick" android:textColor="#000000"/>
 
     <TextView
             android:text="nung"
@@ -83,7 +83,7 @@
             app:layout_constraintEnd_toEndOf="@+id/view2" app:layout_constraintStart_toStartOf="@+id/view2"
             app:layout_constraintTop_toBottomOf="@+id/choice3" android:background="@drawable/unselected"
             android:layout_marginTop="20dp" android:padding="10dp"
-            android:gravity="center" android:textSize="18sp" android:onClick="onClick"/>
+            android:gravity="center" android:textSize="18sp" android:onClick="onClick" android:textColor="#000000"/>
 
     <androidx.appcompat.widget.AppCompatButton
             android:text="Next"

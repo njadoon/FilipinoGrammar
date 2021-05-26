@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Result_Activity">
+
+    <View
+            android:layout_width="wrap_content"
+            android:layout_height="130dp" android:id="@+id/view"
+            android:background="@drawable/background" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+    />
+
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingBottom="32dp"
+            android:background="@drawable/bground"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="100dp" android:layout_marginStart="32dp"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="32dp" android:id="@+id/linearLayout">
+        <TextView
+                android:text="SCORE"
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:layout_margin="20dp"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                android:layout_height="wrap_content" android:id="@+id/text"/>
+        <View
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="?android:attr/listDivider"
+        />
+        <TextView
+                android:text="0 / 10"
+                android:layout_width="match_parent"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                android:layout_margin="20dp"
+                android:textColor="@color/purple"
+                android:gravity="center"
+                android:layout_height="wrap_content" android:id="@+id/score"/>
+
+
+
+
+    </LinearLayout>
+    <View
+            android:layout_width="wrap_content"
+            android:layout_height="100dp" android:id="@+id/view3"
+            android:background="@drawable/bottom"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            android:visibility="visible" app:layout_constraintBottom_toBottomOf="parent"
+    />
+    <androidx.appcompat.widget.AppCompatButton
+            android:text="Return to Home page"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" android:id="@+id/donebtn"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            android:background="@drawable/button_1"
+            android:textColor="#FFFFFF" android:fontFamily="sans-serif-medium"
+            android:textSize="18sp" android:onClick="onClick" app:layout_constraintEnd_toEndOf="parent"
+            tools:ignore="OnClick" android:layout_marginTop="350dp"/>
+    <TextView
+            android:text="Name"
+            android:textSize="40sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/namedisplay"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="230dp" app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="300dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

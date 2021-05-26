@@ -11,11 +11,10 @@ import java.util.Random;
 
 public class Questions extends AppCompatActivity {
     CountDownTimer timer;
-    int timerValue = 15;
-    private TextView tvQuestion, tvQuestionNo, btnChoice1, btnChoice2, btnChoice3, btnChoice4, selected;
+    private TextView tvTimer, tvQuestion, tvQuestionNo, btnChoice1, btnChoice2, btnChoice3, btnChoice4, selected;
     private Button btnNext;
     String question, choice1, choice2, choice3, choice4, answer, selectedAnswer;
-    private int score = 0; private int correctAnswer; private int questionNumber = 1; int n = 0;
+    private int score = 0; private int questionNumber = 1; int n = 0;
     QuestionPack current = new QuestionPack();
     int[] questions = new int[10];
     @Override
@@ -24,13 +23,25 @@ public class Questions extends AppCompatActivity {
         setContentView(R.layout.activity_questions);
         tvQuestion = findViewById(R.id.question);
         tvQuestionNo = findViewById(R.id.tvQuestionNo);
-//         timer = findViewById(R.id.timer);
+        tvTimer = findViewById(R.id.timer);
         btnChoice1 = findViewById(R.id.choice1);
         btnChoice2 = findViewById(R.id.choice2);
         btnChoice3 = findViewById(R.id.choice3);
         btnChoice4 = findViewById(R.id.choice4);
         btnNext = findViewById(R.id.btnNext);
         Random random = new Random();
+        timer = new CountDownTimer(10000, 1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                tvTimer.setText("" + millisUntilFinished / 1000);
+            }
+            @Override
+            public void onFinish() {
+                showAnswer();
+                btnChoicesOff();
+                timesUp();
+            }
+        };
         for (int i = 0; i < questions.length; i++) {
             questions[i] = random.nextInt(32);
             for (int j = 0; j < i; j++) {
@@ -41,14 +52,20 @@ public class Questions extends AppCompatActivity {
             }
         }
         updateQuestion();
+        timer.start();
+    }
+    private void timesUp(){
+        Toast.makeText(this,"Times Up",Toast.LENGTH_SHORT).show();
 }
     private void updateQuestion(){
-        System.out.println("Array number is "+ n);
-        System.out.println("Question Number is "+ questionNumber +"/"+questions.length);
-//        if(timer != null){
-//            timer.cancel();
-//        }
-//        timer.start();
+        questionNumber++;
+        n++;
+        resetTimer();
+        tvQuestionNo.setText(questionNumber + "/10");
+        if(timer != null){
+            timer.cancel();
+        }
+        timer.start();
         if (questionNumber < questions.length) {
             btnChoicesOn();
             question = current.getQuestion(questions[n]);
@@ -109,34 +126,31 @@ public class Questions extends AppCompatActivity {
         else if (current.getCorrectAnswer(questions[n]).equalsIgnoreCase(current.getChoice4(questions[n])))
             btnChoice4.setBackground(getDrawable(R.drawable.right));
     }
-//    void resetTimer() {
-//        timer = new CountDownTimer(30000,1000) {
-//            @Override
-//            public void onTick(long millisUntilFinished) {
-//                timer.setText(String.valueOf(millisUntilFinished/1000));
-//            }
-//            @Override
-//            public void onFinish() {
-//            }
-//        };
-//    }
+    void resetTimer() {
+        timer = new CountDownTimer(10000,1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                tvTimer.setText(String.valueOf(millisUntilFinished/1000));
+            }
+            @Override
+            public void onFinish() {
+            }
+        };
+    }
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.choice1:
             case R.id.choice2:
             case R.id.choice3:
             case R.id.choice4:
-//                if(timer!=null){
-//                    timer.cancel();}
+                if(timer!=null){
+                    timer.cancel();}
                 selected = (TextView) view;
                 checkAnswer(selected);
                 btnChoicesOff();
                 break;
             case R.id.btnNext:
-                questionNumber++;
-                tvQuestionNo.setText(questionNumber + "/10");
                 if(n <= questions.length){
-                    n++;
                     updateQuestion();
                 } else {
                     Intent intent = new Intent(Questions.this, Result_Activity.class);

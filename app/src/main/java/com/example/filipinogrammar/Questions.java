@@ -154,7 +154,7 @@ public class Questions extends AppCompatActivity {
                     updateQuestion();
                 } else {
                     Intent intent = new Intent(Questions.this, Result_Activity.class);
-                    intent.putExtra("correct", score);
+                    intent.putExtra("finalscore", score);
                     intent.putExtra("total", questions.length);
                     startActivity(intent);
                 }

@@ -19,15 +19,15 @@ public class Questions extends AppCompatActivity {
     QuestionPack current = new QuestionPack();
     int[] questions = new int[10];
 
-    //String name;
+    String name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_questions);
 
-        //Bundle bundle = getIntent().getExtras();
-        //name = bundle.getString("Get_Name");
+        Bundle bundle = getIntent().getExtras();
+        name = bundle.getString("Get_Name");
 
         btnQuit = findViewById(R.id.btnQuit);
         btnQuit.setOnClickListener(v -> openChoiceActivity());
@@ -54,6 +54,8 @@ public class Questions extends AppCompatActivity {
 }
     public void openChoiceActivity() {
         Intent intent = new Intent(this, Choices_Activity.class);
+        intent.putExtra("finalscore", score);
+        intent.putExtra("Get_Name", name);
         startActivity(intent);
     }
 
@@ -85,6 +87,8 @@ public class Questions extends AppCompatActivity {
     }
     public void openResults() {
         Intent intent = new Intent(this, Result_Activity.class);
+        intent.putExtra("finalscore", String.valueOf(score));
+        intent.putExtra("Get_Name", name);
         startActivity(intent);
     }
     public void btnChoicesOff(){
@@ -108,7 +112,7 @@ public class Questions extends AppCompatActivity {
     void checkAnswer(TextView textView) {
         selectedAnswer = textView.getText().toString();
         if(selectedAnswer.equals(current.getCorrectAnswer(questions[n]))) {
-            score++;
+            score = score + 1;
             textView.setBackground(getDrawable(R.drawable.right));
         } else {
             showAnswer();
@@ -154,12 +158,12 @@ public class Questions extends AppCompatActivity {
                 if(n <= questions.length){
                     n++;
                     updateQuestion();
-                } else {//Question.this, Result_Activity
-                    Intent intent = new Intent(getApplicationContext(), Result_Activity.class);
-                    intent.putExtra("finalscore", score);
+                } else {
+                    Intent intent = new Intent(Questions.this, Result_Activity.class);
+                    intent.putExtra("finalscore",  String.valueOf(score));
 
-                    //intent.putExtra("Get_Name", name);
-                    //intent.putExtra("total", questions.length);
+                    intent.putExtra("Get_Name", name);
+                    intent.putExtra("total", questions.length);
                     startActivity(intent);
                 }
                 break;

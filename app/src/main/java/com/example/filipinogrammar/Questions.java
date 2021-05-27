@@ -11,37 +11,36 @@ import java.util.Random;
 
 public class Questions extends AppCompatActivity {
     CountDownTimer timer;
-    private TextView tvTimer, tvQuestion, tvQuestionNo, btnChoice1, btnChoice2, btnChoice3, btnChoice4, selected;
-    private Button btnNext;
+    int timerValue = 15;
+    private TextView tvQuestion, tvQuestionNo, btnChoice1, btnChoice2, btnChoice3, btnChoice4, selected;
+    private Button btnNext, btnQuit;
     String question, choice1, choice2, choice3, choice4, answer, selectedAnswer;
-    private int score = 0; private int questionNumber = 1; int n = 0;
+    private int score = 0; private int correctAnswer; private int questionNumber = 1; int n = 0;
     QuestionPack current = new QuestionPack();
     int[] questions = new int[10];
+
+    String name;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_questions);
+
+        Bundle bundle = getIntent().getExtras();
+        name = bundle.getString("Get_Name");
+
+        btnQuit = findViewById(R.id.btnQuit);
+        btnQuit.setOnClickListener(v -> openChoiceActivity());
+
         tvQuestion = findViewById(R.id.question);
         tvQuestionNo = findViewById(R.id.tvQuestionNo);
-        tvTimer = findViewById(R.id.timer);
+//         timer = findViewById(R.id.timer);
         btnChoice1 = findViewById(R.id.choice1);
         btnChoice2 = findViewById(R.id.choice2);
         btnChoice3 = findViewById(R.id.choice3);
         btnChoice4 = findViewById(R.id.choice4);
         btnNext = findViewById(R.id.btnNext);
         Random random = new Random();
-        timer = new CountDownTimer(10000, 1000) {
-            @Override
-            public void onTick(long millisUntilFinished) {
-                tvTimer.setText("" + millisUntilFinished / 1000);
-            }
-            @Override
-            public void onFinish() {
-                showAnswer();
-                btnChoicesOff();
-                timesUp();
-            }
-        };
         for (int i = 0; i < questions.length; i++) {
             questions[i] = random.nextInt(32);
             for (int j = 0; j < i; j++) {
@@ -52,20 +51,22 @@ public class Questions extends AppCompatActivity {
             }
         }
         updateQuestion();
-        timer.start();
-    }
-    private void timesUp(){
-        Toast.makeText(this,"Times Up",Toast.LENGTH_SHORT).show();
 }
+    public void openChoiceActivity() {
+        Intent intent = new Intent(this, Choices_Activity.class);
+        intent.putExtra("finalscore", score);
+        intent.putExtra("Get_Name", name);
+        startActivity(intent);
+    }
+
+
     private void updateQuestion(){
-        questionNumber++;
-        n++;
-        resetTimer();
-        tvQuestionNo.setText(questionNumber + "/10");
-        if(timer != null){
-            timer.cancel();
-        }
-        timer.start();
+        System.out.println("Array number is "+ n);
+        System.out.println("Question Number is "+ questionNumber +"/"+questions.length);
+//        if(timer != null){
+//            timer.cancel();
+//        }
+//        timer.start();
         if (questionNumber < questions.length) {
             btnChoicesOn();
             question = current.getQuestion(questions[n]);
@@ -86,6 +87,8 @@ public class Questions extends AppCompatActivity {
     }
     public void openResults() {
         Intent intent = new Intent(this, Result_Activity.class);
+        intent.putExtra("finalscore", String.valueOf(score));
+        intent.putExtra("Get_Name", name);
         startActivity(intent);
     }
     public void btnChoicesOff(){
@@ -109,7 +112,7 @@ public class Questions extends AppCompatActivity {
     void checkAnswer(TextView textView) {
         selectedAnswer = textView.getText().toString();
         if(selectedAnswer.equals(current.getCorrectAnswer(questions[n]))) {
-            score++;
+            score = score + 1;
             textView.setBackground(getDrawable(R.drawable.right));
         } else {
             showAnswer();
@@ -126,35 +129,40 @@ public class Questions extends AppCompatActivity {
         else if (current.getCorrectAnswer(questions[n]).equalsIgnoreCase(current.getChoice4(questions[n])))
             btnChoice4.setBackground(getDrawable(R.drawable.right));
     }
-    void resetTimer() {
-        timer = new CountDownTimer(10000,1000) {
-            @Override
-            public void onTick(long millisUntilFinished) {
-                tvTimer.setText(String.valueOf(millisUntilFinished/1000));
-            }
-            @Override
-            public void onFinish() {
-            }
-        };
-    }
+//    void resetTimer() {
+//        timer = new CountDownTimer(30000,1000) {
+//            @Override
+//            public void onTick(long millisUntilFinished) {
+//                timer.setText(String.valueOf(millisUntilFinished/1000));
+//            }
+//            @Override
+//            public void onFinish() {
+//            }
+//        };
+//    }
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.choice1:
             case R.id.choice2:
             case R.id.choice3:
             case R.id.choice4:
-                if(timer!=null){
-                    timer.cancel();}
+//                if(timer!=null){
+//                    timer.cancel();}
                 selected = (TextView) view;
                 checkAnswer(selected);
                 btnChoicesOff();
                 break;
             case R.id.btnNext:
+                questionNumber++;
+                tvQuestionNo.setText(questionNumber + "/10");
                 if(n <= questions.length){
+                    n++;
                     updateQuestion();
                 } else {
                     Intent intent = new Intent(Questions.this, Result_Activity.class);
-                    intent.putExtra("finalscore", score);
+                    intent.putExtra("finalscore",  String.valueOf(score));
+
+                    intent.putExtra("Get_Name", name);
                     intent.putExtra("total", questions.length);
                     startActivity(intent);
                 }

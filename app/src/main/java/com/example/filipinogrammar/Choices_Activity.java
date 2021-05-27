@@ -8,10 +8,15 @@ import android.os.Bundle;
 public class Choices_Activity extends AppCompatActivity {
     Button btnLeksiyon, btnPagsususlit;
 
+    //String name;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choices_);
+
+        //Bundle bundle = getIntent().getExtras();
+        //name = bundle.getString("Get_Name");
 
         btnLeksiyon = findViewById(R.id.btnlesson);
         btnLeksiyon.setOnClickListener(v -> openLeksiyonActivity());
@@ -24,6 +29,7 @@ public class Choices_Activity extends AppCompatActivity {
     }
     public void openQuizActivity() {
         Intent intent = new Intent(this, Questions.class);
+        //intent.putExtra("Get_Name", name);
         startActivity(intent);
     }
 }

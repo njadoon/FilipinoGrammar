@@ -13,15 +13,25 @@ public class Questions extends AppCompatActivity {
     CountDownTimer timer;
     int timerValue = 15;
     private TextView tvQuestion, tvQuestionNo, btnChoice1, btnChoice2, btnChoice3, btnChoice4, selected;
-    private Button btnNext;
+    private Button btnNext, btnQuit;
     String question, choice1, choice2, choice3, choice4, answer, selectedAnswer;
     private int score = 0; private int correctAnswer; private int questionNumber = 1; int n = 0;
     QuestionPack current = new QuestionPack();
     int[] questions = new int[10];
+
+    //String name;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_questions);
+
+        //Bundle bundle = getIntent().getExtras();
+        //name = bundle.getString("Get_Name");
+
+        btnQuit = findViewById(R.id.btnQuit);
+        btnQuit.setOnClickListener(v -> openChoiceActivity());
+
         tvQuestion = findViewById(R.id.question);
         tvQuestionNo = findViewById(R.id.tvQuestionNo);
 //         timer = findViewById(R.id.timer);
@@ -42,6 +52,12 @@ public class Questions extends AppCompatActivity {
         }
         updateQuestion();
 }
+    public void openChoiceActivity() {
+        Intent intent = new Intent(this, Choices_Activity.class);
+        startActivity(intent);
+    }
+
+
     private void updateQuestion(){
         System.out.println("Array number is "+ n);
         System.out.println("Question Number is "+ questionNumber +"/"+questions.length);
@@ -138,10 +154,12 @@ public class Questions extends AppCompatActivity {
                 if(n <= questions.length){
                     n++;
                     updateQuestion();
-                } else {
-                    Intent intent = new Intent(Questions.this, Result_Activity.class);
+                } else {//Question.this, Result_Activity
+                    Intent intent = new Intent(getApplicationContext(), Result_Activity.class);
                     intent.putExtra("finalscore", score);
-                    intent.putExtra("total", questions.length);
+
+                    //intent.putExtra("Get_Name", name);
+                    //intent.putExtra("total", questions.length);
                     startActivity(intent);
                 }
                 break;

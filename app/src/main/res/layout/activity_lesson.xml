@@ -58,6 +58,7 @@
             app:layout_constraintEnd_toEndOf="parent" android:scrollbars="vertical" android:textSize="18sp"
             android:textColor="@color/colorWhite" android:paddingRight="@dimen/_20sdp"
             android:paddingLeft="@dimen/_20sdp"
+            android:fontFamily="casual"
             android:paddingTop="@dimen/_20sdp" android:paddingBottom="@dimen/_15sdp"
             android:background="@drawable/bg" android:drawablePadding="@dimen/_15sdp"
             app:layout_constraintHorizontal_bias="1.0" android:layout_marginTop="8dp"

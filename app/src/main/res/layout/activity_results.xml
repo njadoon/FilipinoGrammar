@@ -26,7 +26,7 @@
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="32dp" android:id="@+id/linearLayout"
             app:layout_constraintBottom_toTopOf="@+id/nameDisplay">
         <TextView
-                android:text="SCORE"
+                android:text="ISKOR"
                 android:layout_width="match_parent"
                 android:gravity="center"
                 android:layout_margin="20dp"
@@ -61,7 +61,7 @@
             android:visibility="visible" app:layout_constraintBottom_toBottomOf="parent"
     />
     <androidx.appcompat.widget.AppCompatButton
-            android:text="Return to Home page"
+            android:text="Bumalik sa Umpisa"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/donebtn"
             app:layout_constraintStart_toStartOf="parent"

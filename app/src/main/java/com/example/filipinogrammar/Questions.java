@@ -1,6 +1,5 @@
 package com.example.filipinogrammar;
 import android.content.Intent;
-import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -10,12 +9,16 @@ import android.os.Bundle;
 import java.util.Random;
 
 public class Questions extends AppCompatActivity {
-    CountDownTimer timer;
-    int timerValue = 15;
-    private TextView tvQuestion, tvQuestionNo, btnChoice1, btnChoice2, btnChoice3, btnChoice4, selected;
+    private TextView tvQuestion;
+    private TextView tvQuestionNo;
+    private TextView btnChoice1;
+    private TextView btnChoice2;
+    private TextView btnChoice3;
+    private TextView btnChoice4;
+    private TextView scoreBoard;
     private Button btnNext, btnQuit;
     String question, choice1, choice2, choice3, choice4, answer, selectedAnswer;
-    private int score = 0; private int correctAnswer; private int questionNumber = 1; int n = 0;
+    private int score = 0; private int questionNumber = 1; int n = 0;
     QuestionPack current = new QuestionPack();
     int[] questions = new int[10];
 
@@ -28,13 +31,11 @@ public class Questions extends AppCompatActivity {
 
         Bundle bundle = getIntent().getExtras();
         name = bundle.getString("Get_Name");
-
         btnQuit = findViewById(R.id.btnQuit);
         btnQuit.setOnClickListener(v -> openChoiceActivity());
-
         tvQuestion = findViewById(R.id.question);
+        scoreBoard  = findViewById(R.id.scoreBoard);
         tvQuestionNo = findViewById(R.id.tvQuestionNo);
-//         timer = findViewById(R.id.timer);
         btnChoice1 = findViewById(R.id.choice1);
         btnChoice2 = findViewById(R.id.choice2);
         btnChoice3 = findViewById(R.id.choice3);
@@ -58,16 +59,11 @@ public class Questions extends AppCompatActivity {
         intent.putExtra("Get_Name", name);
         startActivity(intent);
     }
-
-
     private void updateQuestion(){
         System.out.println("Array number is "+ n);
         System.out.println("Question Number is "+ questionNumber +"/"+questions.length);
-//        if(timer != null){
-//            timer.cancel();
-//        }
-//        timer.start();
-        if (questionNumber < questions.length) {
+
+        if (questionNumber <= questions.length) {
             btnChoicesOn();
             question = current.getQuestion(questions[n]);
             choice1 = current.getChoice1(questions[n]);
@@ -86,9 +82,13 @@ public class Questions extends AppCompatActivity {
         }
     }
     public void openResults() {
-        Intent intent = new Intent(this, Result_Activity.class);
-        intent.putExtra("finalscore", String.valueOf(score));
+        Intent intent = new Intent(Questions.this, Result_Activity.class);
+        intent.putExtra("finalscore",  String.valueOf(score));
         intent.putExtra("Get_Name", name);
+        startActivity(intent);
+    }
+    public void openMain() {
+        Intent intent = new Intent(Questions.this, MainActivity.class);
         startActivity(intent);
     }
     public void btnChoicesOff(){
@@ -112,7 +112,8 @@ public class Questions extends AppCompatActivity {
     void checkAnswer(TextView textView) {
         selectedAnswer = textView.getText().toString();
         if(selectedAnswer.equals(current.getCorrectAnswer(questions[n]))) {
-            score = score + 1;
+            score++;
+            scoreBoard.setText(""+score);
             textView.setBackground(getDrawable(R.drawable.right));
         } else {
             showAnswer();
@@ -129,26 +130,14 @@ public class Questions extends AppCompatActivity {
         else if (current.getCorrectAnswer(questions[n]).equalsIgnoreCase(current.getChoice4(questions[n])))
             btnChoice4.setBackground(getDrawable(R.drawable.right));
     }
-//    void resetTimer() {
-//        timer = new CountDownTimer(30000,1000) {
-//            @Override
-//            public void onTick(long millisUntilFinished) {
-//                timer.setText(String.valueOf(millisUntilFinished/1000));
-//            }
-//            @Override
-//            public void onFinish() {
-//            }
-//        };
-//    }
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.choice1:
             case R.id.choice2:
             case R.id.choice3:
             case R.id.choice4:
-//                if(timer!=null){
-//                    timer.cancel();}
-                selected = (TextView) view;
+
+                TextView selected = (TextView) view;
                 checkAnswer(selected);
                 btnChoicesOff();
                 break;
@@ -159,16 +148,11 @@ public class Questions extends AppCompatActivity {
                     n++;
                     updateQuestion();
                 } else {
-                    Intent intent = new Intent(Questions.this, Result_Activity.class);
-                    intent.putExtra("finalscore",  String.valueOf(score));
-
-                    intent.putExtra("Get_Name", name);
-                    intent.putExtra("total", questions.length);
-                    startActivity(intent);
+                    openResults();
                 }
                 break;
             case R.id.btnQuit:
-
+                openMain();
         }
     }
 }

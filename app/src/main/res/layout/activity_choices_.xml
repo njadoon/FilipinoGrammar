@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<androidx.constraintlayout.widget.ConstraintLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -10,42 +10,43 @@
 
 
     <ImageView
-            android:layout_centerHorizontal="true"
             android:layout_marginTop="@dimen/_100sdp"
             android:layout_width="@dimen/_150sdp"
             android:layout_height="@dimen/_200sdp"
             app:srcCompat="@drawable/curious"
             android:id="@+id/imageView2"
 
-    />
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
     <TextView
             android:text="Alin ang nais simulan?"
             android:textColor="@color/white"
-            android:textSize="26sp"
+            android:textSize="30sp"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/_50sdp"
             android:id="@+id/question"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@id/imageView2"
-            android:fontFamily="monospace"
-            android:foregroundGravity="center"/>
-    <androidx.appcompat.widget.AppCompatButton
-            android:text="Leksiyon"
-            android:textColor="@color/colorPrimary"
+            android:fontFamily="casual"
+            android:foregroundGravity="center" app:layout_constraintTop_toBottomOf="@id/imageView2"
+            app:layout_constraintLeft_toLeftOf="parent" app:layout_constraintRight_toRightOf="parent"/>
+    <TextView
+            android:textColor="@color/white"
             android:layout_width="wrap_content"
-            android:background="@drawable/whitebg"
             android:layout_height="wrap_content"
             android:id="@+id/btnlesson"
-            android:layout_marginLeft="@dimen/_60sdp"
-            android:layout_below="@id/question"/>
-    <androidx.appcompat.widget.AppCompatButton
-            android:text="Pagsusulit"
-            android:textColor="@color/colorPrimary"
-            android:background="@drawable/whitebg"
+            android:fontFamily="casual"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/question"
+            app:layout_constraintHorizontal_bias="0.5" app:layout_constraintEnd_toStartOf="@+id/btnQuiz"
+            android:text="Leksiyon" android:drawableTop="@drawable/lesson" android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent" android:layout_marginBottom="32dp"
+            android:drawablePadding="15dp"/>
+    <TextView
+            android:textColor="@color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/btnQuiz"
-            android:layout_marginRight="@dimen/_60sdp"
-            android:layout_alignParentEnd="true"
-            android:layout_below="@id/question"/>
-</RelativeLayout>
+            android:fontFamily="casual" app:layout_constraintTop_toBottomOf="@id/question"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toEndOf="@+id/btnlesson"
+            app:layout_constraintHorizontal_bias="0.5" android:text="Pagsusulit" android:textSize="24sp"
+            android:drawableTop="@drawable/quiz" app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="32dp" android:drawablePadding="15dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

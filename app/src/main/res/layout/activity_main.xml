@@ -44,7 +44,7 @@
                 android:gravity="center"
                 android:text="Welcome"
                 android:textColor="#363A43"
-                android:textSize="30sp"/>
+                android:textSize="30sp" android:fontFamily="@font/autour_one"/>
 
         <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
@@ -57,7 +57,7 @@
                     android:id="@+id/etName"
                     android:hint="Pakilagay ang iyong pangalan"
                     android:textColor="#363A43"
-                    android:textColorHint="#7A8089"/>
+                    android:textColorHint="#7A8089" android:fontFamily="sans-serif-medium"/>
         </com.google.android.material.textfield.TextInputLayout>
         <Button
                 android:layout_width="match_parent"
@@ -67,7 +67,7 @@
                 android:background="@color/colorPrimary"
                 android:text="umpisahan"
                 android:textSize="18sp"
-                android:textColor="@color/white"/>
+                android:textColor="@color/white" android:fontFamily="@font/autour_one"/>
     </LinearLayout>
 </androidx.cardview.widget.CardView>
 </LinearLayout>

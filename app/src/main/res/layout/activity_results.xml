@@ -23,7 +23,8 @@
             android:background="@drawable/bground"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginTop="100dp" android:layout_marginStart="32dp"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="32dp" android:id="@+id/linearLayout">
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="32dp" android:id="@+id/linearLayout"
+            app:layout_constraintBottom_toTopOf="@+id/nameDisplay">
         <TextView
                 android:text="SCORE"
                 android:layout_width="match_parent"
@@ -31,7 +32,8 @@
                 android:layout_margin="20dp"
                 android:textSize="32sp"
                 android:textStyle="bold"
-                android:layout_height="wrap_content" android:id="@+id/text"/>
+                android:layout_height="wrap_content" android:id="@+id/text" android:layout_gravity="center"
+                android:foregroundGravity="center" android:fontFamily="@font/autour_one"/>
         <View
                 android:id="@+id/divider"
                 android:layout_width="match_parent"
@@ -46,16 +48,8 @@
                 android:layout_margin="20dp"
                 android:textColor="@color/purple"
                 android:gravity="center"
-                android:layout_height="wrap_content" android:id="@+id/score"/>
-        <TextView
-                android:text="Total Score: 333"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" android:id="@+id/reslabel"
-                android:gravity="center"
-                android:textSize="20sp"
-                android:textColor="@color/purpleLight"
-                android:layout_margin="10dp"
-        />
+                android:layout_height="wrap_content" android:id="@+id/score" android:foregroundGravity="center"
+                android:layout_gravity="center" android:fontFamily="@font/autour_one"/>
 
 
     </LinearLayout>
@@ -68,22 +62,32 @@
     />
     <androidx.appcompat.widget.AppCompatButton
             android:text="Return to Home page"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/donebtn"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintHorizontal_chainStyle="spread"
             android:background="@drawable/button_1"
-            android:textColor="#FFFFFF" android:fontFamily="sans-serif-medium"
+            android:textColor="#FFFFFF" android:fontFamily="casual"
             android:textSize="18sp" android:onClick="onClick" app:layout_constraintEnd_toEndOf="parent"
-            tools:ignore="OnClick" android:layout_marginTop="350dp"/>
+            tools:ignore="OnClick" app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="16dp" android:paddingRight="10dp" android:padding="15dp"/>
     <TextView
-            android:text=""
+            android:text="Name"
             android:textSize="40sp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/namedisplay"
+            android:layout_height="wrap_content" android:id="@+id/nameDisplay"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+            app:layout_constraintEnd_toStartOf="@+id/scoreDisplay" app:layout_constraintHorizontal_bias="0.5"
+            android:fontFamily="@font/autour_one" android:layout_marginTop="16dp"/>
+    <TextView
+            android:text="0"
+            android:textSize="40sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/scoreDisplay"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="230dp" app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="350dp"/>
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+            app:layout_constraintStart_toEndOf="@+id/nameDisplay" app:layout_constraintHorizontal_bias="0.5"
+            android:fontFamily="@font/autour_one" android:layout_marginTop="16dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

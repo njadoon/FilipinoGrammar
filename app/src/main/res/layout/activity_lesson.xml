@@ -6,49 +6,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".Lesson"
-        android:background="@color/white">
 
-    <View
-            android:layout_width="wrap_content"
-            android:layout_height="80dp" android:id="@+id/view"
-            android:background="@drawable/background" app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
-            android:visibility="visible"/>
-    <View
-            android:layout_width="wrap_content"
-            android:layout_height="100dp" android:id="@+id/view3"
-            android:background="@drawable/bottom"
-            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
-            android:visibility="visible" app:layout_constraintBottom_toBottomOf="parent"
-    />
-    <TextView
-            android:text="Skip to quiz"
-            android:layout_width="0dp"
-            android:layout_height="55dp" android:id="@+id/skip"
-            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintHorizontal_bias="0.5" app:layout_constraintEnd_toStartOf="@+id/nextLesson"
-            android:background="@drawable/button_1" android:foregroundGravity="center" android:gravity="center"
-            android:layout_marginBottom="16dp" android:layout_marginStart="24dp" android:layout_marginEnd="24dp"
-            android:textColor="@color/colorWhite" android:textSize="16sp" android:fontFamily="sans-serif-medium"/>
-    <TextView
-            android:text="Next Lesson"
-            android:layout_width="0dp"
-            android:layout_height="55dp" android:id="@+id/nextLesson"
-            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/skip" app:layout_constraintHorizontal_bias="0.5"
-            android:background="@drawable/button_2" android:foregroundGravity="center" android:gravity="center"
-            android:layout_marginStart="24dp" android:layout_marginEnd="24dp" android:layout_marginBottom="16dp"
-            android:textColor="@color/colorWhite" android:textSize="16sp" android:fontFamily="sans-serif-medium"
-            android:drawableRight="@drawable/arrow1" android:paddingRight="@dimen/_15sdp"
-            android:paddingLeft="@dimen/_10sdp" android:drawableTint="@android:color/background_light"/>
-    <TextView
-            android:text="Leksiyon I"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/lessonHeader"
-            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="16dp"
-            android:fontFamily="monospace" android:textSize="36sp"
-            android:textColor="@color/colorWhite"/>
+        android:background="@drawable/background">
 
     <TextView
             android:layout_width="0dp"
@@ -60,8 +19,56 @@
             android:paddingLeft="@dimen/_20sdp"
             android:fontFamily="casual"
             android:paddingTop="@dimen/_20sdp" android:paddingBottom="@dimen/_15sdp"
-            android:background="@drawable/bg" android:drawablePadding="@dimen/_15sdp"
-            app:layout_constraintHorizontal_bias="1.0" android:layout_marginTop="8dp"
+            android:background="@drawable/bottom" android:drawablePadding="@dimen/_15sdp"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintBottom_toTopOf="@+id/view3" android:layout_marginBottom="8dp"/>
+    <View
+            android:layout_width="wrap_content"
+            android:layout_height="100dp" android:id="@+id/view"
+            android:background="@drawable/background" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            android:visibility="visible"/>
+    <View
+            android:layout_width="wrap_content"
+            android:layout_height="100dp" android:id="@+id/view3"
+            android:background="@drawable/bottom"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            android:visibility="visible" app:layout_constraintBottom_toBottomOf="parent"
+    />
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/skip"
+            android:background="@drawable/quiz" android:foregroundGravity="center" android:gravity="center"
+            android:textColor="@color/colorWhite" android:textSize="16sp" android:fontFamily="sans-serif-medium"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/view3"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/nextLesson"
+            android:background="@drawable/arrow1"
+            android:textColor="@color/colorWhite" android:textSize="16sp" android:fontFamily="sans-serif-medium"
+            android:foregroundGravity="center" android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="32dp" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/view3"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/prevLesson"
+
+            android:background="@drawable/arrow"
+            android:textColor="@color/colorWhite" android:textSize="16sp" android:fontFamily="sans-serif-medium"
+            android:foregroundGravity="center" android:gravity="center"
+            android:visibility="invisible"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="32dp"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toTopOf="@+id/view3"/>
+    <TextView
+            android:text="Leksiyon I"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/lessonHeader"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:fontFamily="casual" android:textSize="36sp"
+            android:textColor="@color/colorWhite" app:layout_constraintBottom_toBottomOf="@+id/view"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

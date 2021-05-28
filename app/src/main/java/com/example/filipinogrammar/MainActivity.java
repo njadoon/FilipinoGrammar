@@ -1,9 +1,8 @@
 package com.example.filipinogrammar;
 
 import android.content.Intent;
-import android.view.View;
+import android.text.method.KeyListener;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
@@ -19,20 +18,18 @@ public class MainActivity extends AppCompatActivity {
 
         btnStart.setOnClickListener(v -> {
             if (etName.getText().toString().isEmpty()){
-                Toast.makeText(getApplicationContext(), "Please enter your name", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Ilagay ang iyong pangalan", Toast.LENGTH_SHORT).show();
             } else {
                 Intent intent = new Intent(this, Choices_Activity.class);
-
                 intent.putExtra("Get_Name", etName.getText().toString());
                 startActivity(intent);
                 finish();
             }
         });    }
 
-    public void sendMessage(View view){
+    public void sendMessage(){
         AppCompatEditText etName = findViewById(R.id.etName);
         String name = etName.getText().toString();
-
         Intent copy = new Intent(this, Result_Activity.class);
         copy.putExtra("Get_Name", name);
         startActivity(copy);
